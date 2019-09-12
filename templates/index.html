@@ -6,6 +6,25 @@
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string. The form should have a target of '/' to
     send us to the same route. -->
+    <form action='/compliment'>
+        <p>
+            What type of images would you like to find?
+            <input type="text" name="name"/>
+        </p>
+        <p>
+            <input type="checkbox" name="show_compliments"/>
+            Show Compliments
+        </p>
+        <p>
+            How many images?
+            <select name="num_compliments">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
 
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
