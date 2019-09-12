@@ -7,6 +7,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Return homepage."""
+def index():
+    #return "Hello, World!"
+    return render_template('index.html')
+
     # TODO: Extract the query term from url using request.args.get()
 
     # TODO: Make 'params' dictionary containing:
