@@ -5,10 +5,9 @@ import json
 
 app = Flask(__name__)
 @app.route('/')
+
 def index():
-   """Return homepage."""
-def index():
-   #return "Hello, World!"
+   return "Hello, World!"
    return render_template('index.html')
    # TODO: Extract the query term from url using request.args.get()
    search_term = request.args.get('search_term')
@@ -30,5 +29,8 @@ def index():
    # TODO: Render the 'index.html' template, passing the list of gifs as a
    # named parameter called 'gifs'
    return render_template("index.html")
+
+
+
 if __name__ == '__main__':
    app.run(debug=True)
