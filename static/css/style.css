@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: cornsilk;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80vw;
+    margin: 20px auto auto auto;
+}
