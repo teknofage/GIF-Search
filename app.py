@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request
 import requests
 import json
-
-
 app = Flask(__name__)
 @app.route('/')
 def index():
+
     """Return Homepage"""
 
 
@@ -24,9 +23,7 @@ def index():
    # named parameter called 'gifs'
     gifs = json.loads(r.content)['results']
     return render_template("index.html", gifs=gif_json, search_term = search_term)
-
-
-
-
+  
+  
 if __name__ == '__main__':
-   app.run(debug=True)
+  app.run(debug=True)
