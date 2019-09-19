@@ -1,4 +1,4 @@
-
+l
 <!DOCTYPE html>
 
 <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
@@ -23,15 +23,10 @@
 
 <!--object.results.media.url -->
 
-
-<<<<<<< HEAD
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-=======
-{% include 'gif.html' %}
->>>>>>> ba92cb6bdb261a055e1ddb4446ab3992ce07c773
 
 <div class="gifs_grid">
-{% for gif in gif_list %}
+{% for gif in gifs %}
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
 {% include 'gif.html' %}
 {% endfor %}
