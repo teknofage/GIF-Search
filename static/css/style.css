@@ -11,4 +11,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     width: 80vw;
     margin: 20px auto auto auto;
+    justify-items: center;
+}
+.item {
+    width: 50%;
+    height: 50%;
+    background: rgba(255, 213, 70, 0.4);
+    border: 2px dashed rgba(236, 198, 48, 0.5);
 }
