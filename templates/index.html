@@ -1,33 +1,36 @@
+
+<!DOCTYPE html>
+
 <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+
 {% extends 'base.html' %}
 
-{% block body %}
+{% block content%}
+
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
-    the search term to the query string. The form should have a target of '/' to
-    send us to the same route. -->
-    <form action='/'>
-    <div class ="search_box">
-        <p>
-            What type of Gifs would you like to find?
-        </p>
-        <input type="text" name="search" placeholder="Enter GIf Here"/>
+   the search term to the query string -->
+   <form action ="/">
+    <div class="search_box" >
+    <p>
+        Search for a Gif
+   </p>
+        <input type="text" name="search" placeholder="Search.."/>
         <button type="submit">Submit</button>
-        </div>
-    </form>
+    </div>
+   </form>
+
+
+
+<!--object.results.media.url -->
 
 
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
-<div class = "gifs">
-
-{% for gif in gifs %}
-
-{% incldue 'gif.html' %}
-
+<div class="gifs_grid">
+{% for gif in gif_list %}
+<!-- TODO: For each gif, include the 'gif.html' template to display it -->
+{% include 'gif.html' %}
 {% endfor %}
-<!-- ##  https://alligator.io/css/align-justify/ for sorting out grids later
-## https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout -->
 
 </div>
-<!-- TODO: For each gif, include the 'gif.html' template to display it -->
 {% endblock %}

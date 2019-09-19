@@ -4,10 +4,10 @@ import json
 
 
 app = Flask(__name__)
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/')
 def index():
     """Return Homepage"""
-
+print("*********")
     search_term = request.args.get('search_term')
   # TODO: Make 'params' dictionary containing:
   # a) the query term, 'q'
