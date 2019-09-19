@@ -24,6 +24,23 @@ def index():
     gifs = json.loads(r.content)['results']
     return render_template("index.html", gifs=gif_json, search_term = search_term)
 
+@app.route('/trending')
+def trending():
+    search_term = "Trending"
+    params = {"q": search_term, "key": "UKFHT9WVVN4O", "limit": 10}
+    r = requests.get("https://api.tenor.com/v1/search", params = params)
+    gif_json = r.json()["results"]
+    gifs = json.loads(r.content)['results']
+    return render_template("index.html", gifs=gif_json, search_term = search_term)
+
+@app.route('/random')
+def random():
+    search_term = "Random"
+    params = {"q": search_term, "key": "UKFHT9WVVN4O", "limit": 10}
+    r = requests.get("https://api.tenor.com/v1/search", params = params)
+    gif_json = r.json()["results"]
+    gifs = json.loads(r.content)['results']
+    return render_template("index.html", gifs=gif_json, search_term = search_term)
 
 if __name__ == '__main__':
   app.run(debug=True)
