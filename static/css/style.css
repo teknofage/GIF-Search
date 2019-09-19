@@ -19,25 +19,9 @@ p{
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    grid-gap: 5px;
+   justify-items: center;
 
 }
 .search_box{
 font-size: 20px;
 display: inline-block;
-
-.grid-container {
-    display: grid;
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
-    width: 80vw;
-    margin: 20px auto auto auto;
-    justify-items: center;
-
-}
-.item {
-    width: 50%;
-    height: 50%;
-    background: rgba(255, 213, 70, 0.4);
-    border: 2px dashed rgba(236, 198, 48, 0.5);
-}
