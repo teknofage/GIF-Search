@@ -7,9 +7,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Return Homepage"""
+<<<<<<< HEAD
+print("*********")
+=======
     
 # test test
     print ("route taken")
+>>>>>>> ba92cb6bdb261a055e1ddb4446ab3992ce07c773
     search_term = request.args.get('search_term')
   # TODO: Make 'params' dictionary containing:
   # a) the query term, 'q'
