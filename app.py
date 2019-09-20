@@ -22,6 +22,7 @@ def index():
    # TODO: Render the 'index.html' template, passing the list of gifs as a
    # named parameter called 'gifs'
     gifs = json.loads(r.content)['results']
+    
     return render_template("index.html", gifs=gif_json, search_term = search_term)
 
 @app.route('/trending')
