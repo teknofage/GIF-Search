@@ -35,6 +35,7 @@
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
 <div class="gifs_grid">
+{% if gifs %}
 {% for gif in gifs %}
 
 
@@ -42,6 +43,9 @@
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
 {% include 'gif.html' %}
 {% endfor %}
+{% else %}
+    <h1>Error! This is not a valid search term. Please try again.</h1>
+    {% endif %}
 
 </div>
 {% endblock %}
