@@ -1,7 +1,15 @@
+import os
+
+from dotenv import load_dotenv
+
 from flask import Flask, render_template, request
 import requests
 import json
 app = Flask(__name__)
+
+load_dotenv()
+TENOR_API_KEY = os.getenv("TENOR_API_KEY")
+
 @app.route('/')
 def index():
 
@@ -13,7 +21,7 @@ def index():
   # a) the query term, 'q'
   # b) your API key, 'key'
   # c) how many GIFs to return, 'limit'
-    params = {"q": search_term, "key": "UKFHT9WVVN4O", "limit": 10}
+    params = {"q": search_term, "key": TENOR_API_KEY, "limit": 10}
     r = requests.get("https://api.tenor.com/v1/search", params = params)
     gif_json = r.json()["results"]
     #print (r.json())
@@ -22,13 +30,13 @@ def index():
    # TODO: Render the 'index.html' template, passing the list of gifs as a
    # named parameter called 'gifs'
     gifs = json.loads(r.content)['results']
-    
+
     return render_template("index.html", gifs=gif_json, search_term = search_term)
 
 @app.route('/trending')
 def trending():
     search_term = "Trending"
-    params = {"q": search_term, "key": "UKFHT9WVVN4O", "limit": 10}
+    params = {"q": search_term, "key": TENOR_API_KEY, "limit": 10}
     r = requests.get("https://api.tenor.com/v1/search", params = params)
     gif_json = r.json()["results"]
     gifs = json.loads(r.content)['results']
@@ -37,7 +45,7 @@ def trending():
 @app.route('/random')
 def random():
     search_term = "Random"
-    params = {"q": search_term, "key": "UKFHT9WVVN4O", "limit": 10}
+    params = {"q": search_term, "key": TENOR_API_KEY, "limit": 10}
     r = requests.get("https://api.tenor.com/v1/search", params = params)
     gif_json = r.json()["results"]
     gifs = json.loads(r.content)['results']
